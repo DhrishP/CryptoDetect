@@ -4,17 +4,15 @@
 ![GitHub forks](https://img.shields.io/github/forks/codebucks27/CryptoBucks-A-crypto-screener-application?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;
 ![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />
 
-This repository contains starter code for Crypto Screener Application in ReactJS. <br />
+This is a crypto details website<br />
 
 View Demo👇: <br />
-https://crypto-bucks.netlify.app/ <br />
+https://crypto-bucks.netlify.app <br />
 
 If you want to learn how to create it please follow below tutorial👇: <br />
 https://youtu.be/JPlVb3t6kx8 <br />
-[![YouTube Video Views](https://img.shields.io/youtube/views/JPlVb3t6kx8?style=social)](https://youtu.be/cT160dOzpGY)<br />
 
-<h3 align="left">▶ Support me via:</h3><br />
-<p><a href="https://www.buymeacoffee.com/CodeBucks" target="_blank"> <img  src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="50" width="210" alt="CodeBucks" ></img></a></p><br />
+
 
 ### Images of The Crypto Screener Website:
 
