@@ -15,7 +15,7 @@ export const Data = ({children}) => {
   const [Coin,getCoin] = useState()
 
 
-
+      
   const fetchModalCoin = async(coinid) =>{
     try{ 
       const data = await fetch(`https://api.coingecko.com/api/v3/coins/${coinid}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`  

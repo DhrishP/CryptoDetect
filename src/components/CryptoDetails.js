@@ -4,9 +4,13 @@ import {  useParams } from 'react-router-dom';
 import { Cryptodata } from './Context/Data'
 import { useNavigate } from 'react-router-dom';
 
-import Icon from '../assets/select-icon.svg'
+
 import CryptoChart from './CryptoChart';
 import {BiDownArrow} from 'react-icons/bi'
+import {AiFillGithub} from 'react-icons/ai'
+import {BsReddit,BsFacebook} from 'react-icons/bs'
+import {AiOutlineTwitter} from 'react-icons/ai'
+
 
 const HighLowBorder = ({Price,High,Low}) =>{
 
@@ -25,9 +29,9 @@ const HighLowBorder = ({Price,High,Low}) =>{
 
   return(
 <>
-    <div className='w-full h-full mt-2  flex'>
-     <span className='h-3 bg-red border rounded-l-md'  style={{width:`${100-width}%`}} ></span>
-     <span className='h-3 bg-green  border rounded-r-md '  style={{width:`${width}%`}}></span>
+    <div className='w-full h-full mt-2   flex'>
+     <span className='h-2 bg-red border rounded-l-md'  style={{width:`${100-width}%`}} ></span>
+     <span className='h-2 bg-grecyan  border rounded-r-md '  style={{width:`${width}%`}}></span>
      </div>
 
 
@@ -46,8 +50,8 @@ const CryptoDetails = () => {
 
   return ReactDOM.createPortal (
     
-    <div onClick={()=>{navigate('..')}} className='h-full w-full z-20  fixed top-0 bg-gray-200 bg-opacity-60  backdrop-blur-md flex items-center justify-center font-nunito'>
-     {Coin?  <div onClick={(e)=>{e.stopPropagation()}} className='h-[75%] w-[65%] bg-gray-200 bg-opacity-75 flex justify-between items-center  relative'>
+    <div onClick={()=>{navigate('..')}} className='h-full w-full z-20  fixed top-0 bg-gray-200 bg-opacity-30  backdrop-blur-md flex items-center justify-center font-nunito'>
+     {Coin?  <div onClick={(e)=>{e.stopPropagation()}} className='h-[75%] w-[65%] bg-gray-300 bg-opacity-35 flex justify-between items-center  relative'>
         <div className=' w-[90%] h-full text-white '>
           <div className='flex mx-10 my-5 space-x-2'>
             <img src={Coin.image.large} className="w-14" alt="" />
@@ -68,8 +72,7 @@ const CryptoDetails = () => {
             <div className='flex justify-end  mr-10   '>
               <span className={` px-1 ${Coin.market_data.price_change_percentage_24h>0?'bg-green  text-grecyan':'bg-red text-red'}  rounded   h-6 bg-opacity-30 flex`}>
                 <h2 className='ml-1'>{Number(Coin.market_data.price_change_percentage_24h).toFixed(2)}%</h2>
-              {/* <img src={Icon}  className={`w-[0.9rem]  ml-1 ${Coin.market_data.price_change_percentage_24h>0? "rotate-180":"text-red"}  `} alt="" />
-               */}
+            
                <BiDownArrow className={`ml-1 mt-1 ${Coin.market_data.price_change_percentage_24h>0? "rotate-180":"text-red"}` } />
               </span>
             
@@ -182,14 +185,17 @@ const CryptoDetails = () => {
                   )}
                 </div>
             <div className='flex items-end mr-10 space-y-2  flex-col'><h2 className='text-sm  font-nunito text-gray-100  '>Sentiment</h2>
-            <span className={` px-1 ${Coin.market_data.price_change_percentage_24h>0?'bg-green  text-grecyan':'bg-red text-red'}  rounded text-sm font-bold  h-5 bg-opacity-30 flex`}>
-                <h2 className='ml-1'>{Number(Coin.market_data.price_change_percentage_24h).toFixed(2)}%</h2>
-              <img src={Icon}  className="w-[0.9rem]  ml-1  " alt="" />
-              </span>
+            <span className={` px-1 ${Coin.sentiment_votes_up_percentage>0?'bg-green  text-grecyan':'bg-red text-red'}  rounded   h-5 bg-opacity-40 flex`}>
+                <h2 className='ml-1'>{Number(Coin.sentiment_votes_up_percentage).toFixed(2)}%</h2>
             
-              <span className={` px-1 ${Coin.market_data.price_change_percentage_24h>0?'bg-green  text-grecyan':'bg-red text-red'} font-bold  rounded   h-5 text-sm bg-opacity-30 flex`}>
-                <h2 className='ml-1'>{Number(Coin.market_data.price_change_percentage_24h).toFixed(2)}%</h2>
-              <img src={Icon}  className="w-[0.9rem]  ml-1  " alt="" />
+               <BiDownArrow className={`ml-1 mt-1 ${Coin.sentiment_votes_up_percentage>0? "rotate-180":"text-red"}` } />
+              </span>
+              <span className={` px-1 ${Coin.sentiment_votes_down_percentage==0?'bg-green  text-grecyan':'bg-red text-red'}  rounded h-5 bg-opacity-40 flex`}>
+                <h2 className='ml-1'>{ Number(Coin.sentiment_votes_down_percentage).toFixed(
+                          2
+                        )}%</h2>
+            
+               <BiDownArrow className={`ml-1 mt-1 ${Coin.sentiment_votes_down_percentage==0? "rotate-180":"text-red"}` } />
               </span>
             
             </div>
@@ -201,7 +207,31 @@ const CryptoDetails = () => {
           </div>
 
         </div>
-        <div className=' w-full '><CryptoChart id={Coinid}/></div>
+        <div className=' w-full ml-2 h-full'>
+          
+          
+          <CryptoChart id={Coinid}/>
+        <div className='w-full pl-10 mt-8 space-y-1'>
+              <h3 className='text-gray-100'> <span className='text-green font-nunito font-bold'>CoinGecko </span> Rank : <span className='text-white'>{Coin.coingecko_rank} </span>    </h3 > 
+              <h3 className='text-gray-100'> <span className='text-green font-nunito font-bold'>CoinGecko </span> Rank : <span className='text-white'>{Coin.coingecko_score
+} </span>    </h3 > 
+      
+        </div>
+        <div className='text-gray-300 w-full pb-3 h-[20%] pl-10 flex space-x-3 items-end justify-end pr-6'>
+   {Coin.links.repos_url.github[0] && <div className=' hover:scale-105 w-10 h-10 flex items-center justify-center  border rounded-full bg-green'> <a target={'_blank'} className='text-lg' href={Coin.links.repos_url.github[0]}><AiFillGithub/></a></div>  }   
+  {Coin.links.subreddit_url &&  <div className=' hover:scale-105 w-10 h-10 flex items-center justify-center  border rounded-full bg-green' ><a target={'_blank'} className='text-lg' href={Coin.links.subreddit_url}><BsReddit/></a></div> }   
+  {Coin.links.twitter_screen_name &&  <div className=' hover:scale-105 w-10 h-10 flex items-center justify-center  border rounded-full bg-green' ><a target={'_blank'} className='text-lg' href={`https://twitter.com/${Coin.links.twitter_screen_name}`}><AiOutlineTwitter/></a></div> }   
+  {Coin.links.facebook_username &&  <div className=' hover:scale-105 w-10 h-10 flex items-center justify-center  border rounded-full bg-green' ><a target={'_blank'} className='text-lg' href={`https://facebook.com/${Coin.links.facebook_username}`}><BsFacebook/></a></div> }  
+
+
+
+
+  
+
+
+        </div>
+        
+        </div>
                       
 
 
