@@ -18,7 +18,7 @@ const Crypto = () => {
            <a href="" target={'_blank'}> <AiFillLinkedin className='w-6 h-6 text-grecyan ml-2'/></a> 
           
            
-         
+
            </div></div> 
            <Outlet/>
            
