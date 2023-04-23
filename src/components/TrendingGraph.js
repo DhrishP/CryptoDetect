@@ -2,6 +2,7 @@ import React, { useContext, useLayoutEffect,useEffect } from 'react'
 import {Trendingdata} from './Context/TrendingData'
 import { BarChart,XAxis,YAxis,Legend,Bar ,FunnelChart,Tooltip,Funnel,LabelList} from 'recharts'
 import TrendingCard from './TrendingCard'
+import {Outlet} from 'react-dom'
 
 const TrendingGraph = () => {
   const {TrendData} = useContext(Trendingdata)
@@ -54,7 +55,7 @@ const TrendingGraph = () => {
   </BarChart>
   </div>
   </div>
-
+  
 
 </>
   )
