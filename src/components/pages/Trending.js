@@ -8,7 +8,7 @@ import { Trendingdata } from '../Context/TrendingData'
 
 
 const Trending = () => {
-  const {TrendData} = useContext(Trendingdata )
+  const {TrendData} = useContext(Trendingdata)
   
   return (
     <>

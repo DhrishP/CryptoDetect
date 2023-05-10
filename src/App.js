@@ -18,7 +18,9 @@ function App() {
       <Route path='/trending' element={<Trending/>}>
         <Route path='/trending/:Coinid' element={<CryptoDetails/>}/>
       </Route>
-      <Route path='/favourites' element={<Favourites/>}/>
+      <Route path='/favourites' element={<Favourites/>}>
+      <Route path='/favourites/:Coinid' element={<CryptoDetails/>}/>
+      </Route>
     </Route>
    </Routes>
    

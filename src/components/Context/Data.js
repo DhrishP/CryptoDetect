@@ -29,6 +29,9 @@ export const Data = ({children}) => {
   }
 
   const fetchdata = async() =>{
+    getcryptoData()
+    SetTotalPages(13220)
+    
     try{ 
       const data = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinData}&order=${Sortby}&per_page=${PerPage}&page=${Page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
     ).then(res => res.json()).then(json => json)
