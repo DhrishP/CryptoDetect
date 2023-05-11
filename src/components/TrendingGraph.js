@@ -33,10 +33,7 @@ const TrendingGraph = () => {
    const renderCustomAxisTick=({payload}) =>{
       console.log(payload)
    }
-   const renderCustomBarLabel = () =>{
-
-
-   }
+   
   
   
   return (
@@ -49,7 +46,7 @@ const TrendingGraph = () => {
     <YAxis />
     <Tooltip stroke="#adefd1ff"/>
     <Legend/>
-    <Bar dataKey="Rank"  barSize={35} fill="#adefd1ff"
+    <Bar dataKey="Rank"  barSize={35} fill="#90EE90"
      />
 
   </BarChart>

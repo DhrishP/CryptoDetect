@@ -14,7 +14,7 @@ const TrendingCard = (val) => {
         {TrendData.coins.map((val)=>{
             return(
                 <>
-                <div onClick={()=>{navigate(`${val.item.id}`)}} key={val.item.id} className='h-3/4 my-auto cursor-pointer  shadow-green shadow-lg hover:scale-110 bg-gray-300  mx-2 w-full border border-grecyan'>
+                <div  onClick={()=>{navigate(`${val.item.id}`)}} key={val.item.id} className='h-3/4 my-auto cursor-pointer  shadow-green shadow-lg hover:scale-110 bg-gray-300  mx-2 w-full border border-grecyan'>
                     <img className='mx-auto my-4' src={val.item.small} alt="" />
                     <h2 className='text-white  font-bold font-nunito   text-[19px] text-center '> {val.item.name}</h2>
                 

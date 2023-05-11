@@ -9,7 +9,7 @@ const Logo = () => {
     <Link to='/' >
         <img src={Logoimg} alt=""  className='w-10'/>
     </Link>
-    <div className='text-lg font-nunito  text-grecyan'>CryptoDetect</div>
+      <div className='text-lg font-nunito  text-[#90EE90]'>CryptoDetect</div>
     
     
     
