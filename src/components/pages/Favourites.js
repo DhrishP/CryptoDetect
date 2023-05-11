@@ -3,6 +3,7 @@ import { Cryptodata} from '../Context/Data'
 import { Link } from 'react-router-dom';
 import { FavouriteContext } from '../Context/FavContext';
 import { Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -35,7 +36,7 @@ const FavButton = ({data})=>{
 const Favourites = () => {
   let  { currency}  = useContext(Cryptodata);
   const {contextdata} = useContext(FavouriteContext)
-  
+  const navigate = useNavigate()
   const SaveforFav = () =>{
     
   }
@@ -64,15 +65,15 @@ const Favourites = () => {
           {
             contextdata.map((data)=>{
                 return(
-                  <tr className='border border-gray-100 '  key={data.id}>
+                  <tr className='border border-gray-100' onClick={()=>{navigate(`${data.id}`)}}  key={data.id}>
                   <td className='p-4 flex'>
                   <FavButton data={data.id}/>
                     <div className=''><img src={data.image} alt="" className='w-6 ml-2 h-6' /></div>
                  
-                    <Link to={`/${data.id}`} className="cursor-pointer uppercase ml-2 font-nunito"> {data.symbol}</Link>
+                    <Link to={`${data.id}`} className="cursor-pointer uppercase ml-2 font-nunito"> {data.symbol}</Link>
                     </td>
                   <td className='p-4'>
-                    <Link to={`/${data.id}`} className="cursor-pointer"> {data.name}</Link>
+                    <Link to={`${data.id}`} className="cursor-pointer"> {data.name}</Link>
                    </td>
                   <td className='p-4 text-grecyan'>{
                     new Intl.NumberFormat("en-IN",{

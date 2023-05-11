@@ -61,7 +61,7 @@ if (cryptoData && cryptoData.length >= PerPage) {
             <div className='mt-[0.10rem] '>
                 <div className='flex'>
                 <span className=''>Per page:</span>
-                <input min={1} max={200} type="text" ref={perpage} className='w-8 text-center rounded ml-1  bg-gray-200 placeholder:text-gray-100 text-grecyan' placeholder='10' />
+                <input min={1} max={200} type="text" ref={perpage} className='w-8 text-center rounded ml-1  bg-gray-200 placeholder:text-gray-100 text-[#90EE90]' placeholder='10' />
                 <img src={SubmitIcon} onClick={ChangePerPage}  alt="" />
             </div>
             </div>
@@ -71,17 +71,17 @@ if (cryptoData && cryptoData.length >= PerPage) {
            Page<=1? null:<>  <li className='rotate-180  cursor-pointer ' onClick={prev}><img src={Arrow} alt="" /></li></>
             }
             { 
-           Page<=1? null:<>  <li onClick={dottedPrev} className='w-4 h-4 flex  justify-center cursor-pointer'>..</li></>
+           Page<=1? null:<>  <li onClick={dottedPrev} className='w-4 h-4 flex   justify-center cursor-pointer'>..</li></>
             }
            { 
-           Page<=1? null:<>      <li onClick={prev} className='border p-2 border-gray-200 text-grecyan  bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>{Page-1}</li></>
+           Page<=1? null:<>      <li onClick={prev} className='border p-2 border-gray-200 text-[#90EE90]    bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>{Page-1}</li></>
             }
         
     
-            <li disabled className='border border-grecyan text-gray-300 font-semibold  bg-grecyan w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>{Page}</li>
+            <li disabled className='border border-[#90EE90] text-gray-300 font-semibold  bg-[#90EE90]  w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>{Page}</li>
     
             { 
-           Page==LastPage? null:<> <li onClick={next} className='border border-gray-200 text-grecyan  bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>{Page+1}</li></>
+           Page==LastPage? null:<> <li onClick={next} className='border border-gray-200 text-[#90EE90]   bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>{Page+1}</li></>
             }
             
     
@@ -91,7 +91,7 @@ if (cryptoData && cryptoData.length >= PerPage) {
             }
             
            { 
-           Page==LastPage? null:<> <li onClick={()=>{SetPage(LastPage)}} className='border border-gray-200 text-grecyan  bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center p-4 cursor-pointer'>{LastPage}</li>
+           Page==LastPage? null:<> <li onClick={()=>{SetPage(LastPage)}} className='border border-gray-200  text-[#90EE90]  bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center p-4 cursor-pointer'>{LastPage}</li>
             <li onClick={next}><img src={Arrow}  alt="" /></li> </>
             }
         </ul>

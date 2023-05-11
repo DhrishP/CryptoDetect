@@ -88,8 +88,8 @@ const Table = () => {
         </tbody>
     </table> : 
     <div className='w-[85vw] flex items-center justify-center h-96 top-56 relative space-x-2  rounded-t-lg border border-gray-100'>
-        <div className='border-4 border-grecyan w-10 h-10 rounded-full border-b-gray-200 animate-spin'></div>
-        <span className='text-white'>Searching..</span>
+        <div className='border-4 border-[#90EE90] w-10 h-10 rounded-full border-b-gray-200 animate-spin'></div>
+        <span className='text-white'>Please wait....</span>
 
     </div>
     }

@@ -50,8 +50,8 @@ const CryptoDetails = () => {
 
   return ReactDOM.createPortal (
     
-    <div onClick={()=>{navigate('..')}} className='h-full w-full z-20  fixed top-0 bg-gray-200 bg-opacity-30  backdrop-blur-md flex items-center justify-center font-nunito'>
-     {Coin?  <div onClick={(e)=>{e.stopPropagation()}} className='h-[75%] w-[65%] bg-gray-300 bg-opacity-35 flex justify-between items-center  relative'>
+    <div onClick={()=>{navigate('..')}} className='h-full w-full z-20  fixed top-0 bg-gray-200 bg-opacity-10  backdrop-blur-md flex items-center justify-center font-nunito'>
+     {Coin?  <div onClick={(e)=>{e.stopPropagation()}} className='h-[75%] w-[65%] bg-gray-300 bg-opacity-30 flex justify-between items-center  relative'>
         <div className=' w-[90%] h-full text-white '>
           <div className='flex mx-10 my-5 space-x-2'>
             <img src={Coin.image.large} className="w-14" alt="" />

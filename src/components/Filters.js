@@ -16,7 +16,7 @@ const Filters = () => {
         <Currency/>
         <div className='flex font-nunito space-x-1 mr-10 items-center  '>
           <span className='text-white capitalize '>sort:</span>
-          <select name="valueSort" className='bg-gray-200 rounded pl-1 pr-1 focus:border-grecyan font-nunito capitalize text-base  active:border-grecyan text-white cursor-pointer' onClick={(e)=>{e.preventDefault();
+          <select name="valueSort" className='bg-gray-200 rounded pl-1 pr-1 focus:border-green font-nunito capitalize text-base  active:border-green text-white cursor-pointer' onClick={(e)=>{e.preventDefault();
           SetSortby(e.target.value)}} id="Sort">
             <option value="market_cap_desc">market cap desc</option>
             <option value="market_cap_asc">market cap asc</option>
@@ -26,8 +26,8 @@ const Filters = () => {
             <option value="id_desc">id desc</option>
 
           </select>
-              <GoTriangleDown  className='text-grecyan h-5 relative right-5 cursor-pointer '/>
-              <button onClick={resetFunc}><img className="h-7 hover:scale-110 " src={ResetIcon} alt="" /></button>
+              <GoTriangleDown  className='text-green h-5 relative right-5 cursor-pointer '/>
+              <button onClick={resetFunc}><img className="h-7 text-green hover:scale-110 " src={ResetIcon} alt="" /></button>
         </div>
         
 

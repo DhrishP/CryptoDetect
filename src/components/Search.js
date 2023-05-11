@@ -17,7 +17,7 @@ const Searchinput = ({handleSearch}) =>{
 <>
 
 <form className='flex ml-2'>
-        <input type="text" placeholder='Search here..' className='bg-gray-200 w-96 rounded-md text-grecyan placeholder:text-gray-100 pl-2 required border border-transparent  focus:border-grecyan'  onChange={(e)=>{
+        <input type="text" placeholder='Search here..' className='bg-gray-200 w-96 rounded-md text-green placeholder:text-gray-100 pl-2 required border border-transparent  focus:border-green'  onChange={(e)=>{
           e.preventDefault();
           setText(e.target.value)
           let query = e.target.value;
@@ -39,7 +39,7 @@ const Searchinput = ({handleSearch}) =>{
               )
            
             }) : <div className='flex items-center justify-center w-full h-full'>
-              <div className='border-4 rounded-full border-b-gray-200 animate-spin border-grecyan h-12 w-12'></div>
+              <div className='border-4 rounded-full border-b-gray-200 animate-spin border-green h-12 w-12'></div>
               <h2 className='ml-2 font-nunito'>Searching</h2>
             </div>
            }
