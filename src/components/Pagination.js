@@ -57,7 +57,7 @@ const Pagination = () => {
 if (cryptoData && cryptoData.length >= PerPage) {
     return (
         <>
-        <div className='flex space-x-6  ' >
+        <div className='md:flex space-y-4 md:space-y-0 space-x-6 mb-10 ' >
             <div className='mt-[0.10rem] '>
                 <div className='flex'>
                 <span className=''>Per page:</span>
