@@ -17,7 +17,7 @@ const Searchinput = ({handleSearch}) =>{
 <>
 
 <form className='flex ml-2'>
-        <input type="text" placeholder='Search here..' className='bg-gray-200 w-96 rounded-md text-green placeholder:text-gray-100 pl-2 required border border-transparent  focus:border-green'  onChange={(e)=>{
+        <input type="text" placeholder='Search here..' className='bg-gray-200 md:w-96 mx-auto sm:w-96 w-80 rounded-md text-green placeholder:text-gray-100 pl-2 required md:border border-transparent  focus:border-green'  onChange={(e)=>{
           e.preventDefault();
           setText(e.target.value)
           let query = e.target.value;

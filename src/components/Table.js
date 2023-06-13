@@ -39,60 +39,73 @@ const Table = () => {
 
   return (
 <>
-      {cryptoData ?  
-      <table className='w-[85vw] top-56 relative  rounded-t-lg border border-gray-100 table-auto'>
-        <thead className='text-center text-gray-100 capitalize border  border-gray-100  '>
-            <tr className=''>
-            <th className='p-3'>asset</th>
-            <th className='p-3'>name</th>
-            <th className='p-3'>price</th>
-            <th className='py-3 px-0 '>1H</th>
-            <th className='py-3 '>24H</th>
-            <th className='p-3'>7D</th>
-            <th className='p-3'>total volume</th>
-            <th className='p-3'>market cap change</th>
-            </tr>
-        </thead>
-        <tbody className='text-center text-white capitalize border font-nunito border-gray-100'>
-          {
-            cryptoData.map((data)=>{
-                return(
-                  <tr className='border border-gray-100 '  key={data.id}>
-                  <td className='p-4 flex'>
-                  <FavButton data={data.id}/>
-                    <div className=''><img src={data.image} alt="" className='w-6 ml-2 h-6' /></div>
-                 
-                    <Link to={`/${data.id}`} className="cursor-pointer uppercase ml-2 font-nunito"> {data.symbol}</Link>
-                    </td>
-                  <td className='p-4'>
-                    <Link to={`/${data.id}`} className="cursor-pointer"> {data.name}</Link>
-                   </td>
-                  <td className='p-4 text-grecyan'>{
-                    new Intl.NumberFormat("en-IN",{
-                      style:"currency",
-                      currency:currency
-                    }).format(data.current_price)
-                  }</td>
-                  <td className={data.price_change_percentage_1h_in_currency >0? 'p-4 text-green':'p-4 text-red'}>{Number(data.price_change_percentage_1h_in_currency).toFixed(2)}%</td>
-                  <td className={data.price_change_percentage_24h_in_currency >0? 'p-4 text-green':'p-4 text-red'} >{Number(data.price_change_percentage_24h_in_currency).toFixed(2)}%</td>
-                  <td className={data.price_change_percentage_7d_in_currency>0? 'p-4 text-green':'p-4 text-red'}>{Number(data.price_change_percentage_7d_in_currency).toFixed(2)}%</td>
-                  <td className='p-4'>{Number(data.total_volume).toFixed(2)}</td>
-                  <td className='p-4'>{Number(data.market_cap_change_percentage_24h).toFixed(2)}%</td>
-                  </tr>
-                )
+{cryptoData ? (
+  <table className="md:w-[85vw] md:top-56 top-64 relative rounded-t-lg border border-gray-100 table-auto">
+    <thead className="text-center text-gray-100 capitalize border border-gray-100">
+      <tr className="">
+        <th className="p-3">asset</th>
+        <th className="p-3 hidden sm:table-cell">name</th>
+        <th className="p-3 ">price</th>
+        <th className="p-3 hidden md:table-cell">1H</th>
+        <th className="p-3 hidden md:table-cell">24H</th>
+        <th className="p-3 hidden md:table-cell">7D</th>
+        <th className="p-3 hidden lg:table-cell">total volume</th>
+        <th className="p-3 hidden lg:table-cell">market cap change</th>
+      </tr>
+    </thead>
+    <tbody className="text-center text-white capitalize border font-nunito border-gray-100">
+      {cryptoData.map((data) => {
+        return (
+          <tr className="border border-gray-100" key={data.id}>
+            <td className="p-4 flex justify-center items-center">
+              <FavButton data={data.id} />
+              <div className="">
+                <img src={data.image} alt="" className="w-6 ml-2 h-6" />
+              </div>
 
-            })
+              <Link
+                to={`/${data.id}`}
+                className="cursor-pointer uppercase ml-2 font-nunito"
+              >
+                {data.symbol}
+              </Link>
+            </td>
+            <td className="p-4 hidden sm:table-cell">
+              <Link to={`/${data.id}`} className="cursor-pointer">
+                {data.name}
+              </Link>
+            </td>
+            <td className="p-4 text-grecyan">
+              {new Intl.NumberFormat("en-IN", {
+                style: "currency",
+                currency: currency,
+              }).format(data.current_price)}
+            </td>
+            <td className={`p-4 ${data.price_change_percentage_1h_in_currency > 0 ? 'text-green' : 'text-red'} hidden md:table-cell`}>
+              {Number(data.price_change_percentage_1h_in_currency).toFixed(2)}%
+            </td>
+            <td className={`p-4 ${data.price_change_percentage_24h_in_currency > 0 ? 'text-green' : 'text-red'} hidden md:table-cell`}>
+              {Number(data.price_change_percentage_24h_in_currency).toFixed(2)}%
+            </td>
+            <td className={`p-4 ${data.price_change_percentage_7d_in_currency > 0 ? 'text-green' : 'text-red'} hidden md:table-cell`}>
+              {Number(data.price_change_percentage_7d_in_currency).toFixed(2)}%
+            </td>
+            <td className="p-4 hidden lg:table-cell">{Number(data.total_volume).toFixed(2)}</td>
+            <td className="p-4 hidden lg:table-cell">{Number(data.market_cap_change_percentage_24h).toFixed(2)}%</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+) : (
+  <div className="w-[85vw] flex items-center justify-center h-96 md:top-56 top-64 relative space-x-2 rounded-t-lg border border-gray-100">
+    <div className="border-4 border-[#90EE90] w-10 h-10 rounded-full border-b-gray-200 animate-spin"></div>
+    <span className="text-white">Please wait....</span>
+  </div>
+)}
 
 
-          }
-        </tbody>
-    </table> : 
-    <div className='w-[85vw] flex items-center justify-center h-96 top-56 relative space-x-2  rounded-t-lg border border-gray-100'>
-        <div className='border-4 border-[#90EE90] w-10 h-10 rounded-full border-b-gray-200 animate-spin'></div>
-        <span className='text-white'>Please wait....</span>
-
-    </div>
-    }
+   
  
     </>
   )
