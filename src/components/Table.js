@@ -56,9 +56,9 @@ const Table = () => {
     <tbody className="text-center text-white capitalize border font-nunito border-gray-100">
       {cryptoData.map((data) => {
         return (
-          <tr className="border border-gray-100" key={data.id}>
-            <td className="p-4 flex justify-center items-center">
-              <FavButton data={data.id} />
+          <tr className="border  border-gray-100" key={data.id}>
+            <td className="py-2 flex justify-start ml-2 items-center">
+              <FavButton className="" data={data.id} />
               <div className="">
                 <img src={data.image} alt="" className="w-6 ml-2 h-6" />
               </div>
